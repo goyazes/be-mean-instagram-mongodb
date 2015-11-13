@@ -1,0 +1,53 @@
+mongodb
+
+Com os bancos relacionais o que importa são as respostas
+que você tem.
+
+Com os bancos NoSQL são as perguntas que importam.
+mongodb não tem joints
+
+\\Principais grupos de NoSQL
+\\chave-valor : mais rápido, usado para cache.
+\\documento: 
+\\grafos: 
+
+mongodb[]
+
+cmd mongod levanta o servidor
+cmd mongo levanta o client, executa em outro terminal.
+
+\\mongoexport : Para exportarmos os dados de uma coleção
+
+mongoexport --db nome_do_database --collection nome_da_colecao --out minha_colecao.json
+
+\\mongoimport: importa os dados de um arquivo para uma coleção
+
+mongoimport --db database --collection collection --drop --file data.json
+
+
+
+No git eu criei uma pasta no GitHub be-mean-instagram-mongodb e dentro a pasta 'exercises'
+dentro dela coloquei o arquivo do exercicio.md, depois fiz o fork do be-meam-instagram
+e clonei ele com o comando git clone endereço do fork, então ele baixou pra
+minha máquina e eu colei dentro da pasta correta o meu exercício.md então
+no shell cd be-mean-instagram > git add . > git commit -m 'Daniel Cruvinel - MongoDb - Exercicio 01 - resolvido' > git push -u
+
+Então, no site do github cliquei no botão VERDE > compare across forks > head forks: é o meu fork > create pull request > create pull request
+
+# MongoDB - Aula 01 - Exercício
+autor: Daniel Cruvinel
+
+## Importando os restaurantes
+
+   '''
+   mongoimport --db be-mean --collection restaurantes --drop --file C:\Users\windows\Desktop\restaurantes.json
+   2015-11-11T11:00:46.788-0200    connected to: localhost
+   2015-11-11T11:00:46.795-0200    dropping: be-mean.restaurantes
+   2015-11-11T11:00:49.709-0200    [##########...............] be-mean.restaurantes 5.2 MB/11.3 MB (45.5%)
+   2015-11-11T11:00:51.309-0200    imported 25359 documents
+
+
+## Contando os restaurantes
+
+   db.restaurantes.find({}).count()
+   25359
